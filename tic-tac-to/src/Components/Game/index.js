@@ -33,11 +33,25 @@ export default function Game() {
           squares[pattern[1]] === "" ||
           squares[pattern[2]] === ""
         ) {
+          // do nothing
         } else if (
           squares[pattern[0]] === squares[pattern[1]] &&
           squares[pattern[1]] === squares[pattern[2]]
         ) {
           setWinner(squares[pattern[0]]);
+          // } else if (
+          //   (squares[pattern[0]] === squares[pattern[1]] &&
+          //     squares[pattern[1]] !== squares[pattern[2]] &&
+          //     squares[pattern[0]] !== squares[pattern[2]]) ||
+          //   (squares[pattern[0]] !== squares[pattern[1]] &&
+          //     squares[pattern[1]] === squares[pattern[2]] &&
+          //     squares[pattern[0]] !== squares[pattern[2]]) ||
+          //   (squares[pattern[0]] !== squares[pattern[1]] &&
+          //     squares[pattern[1]] !== squares[pattern[2]] &&
+          //     squares[pattern[0]] === squares[pattern[2]])
+          // ) {
+          //   setWinner("No one");
+          //   alert("Draw");
         }
       });
     }
@@ -50,6 +64,7 @@ export default function Game() {
     }
 
     let squares = [...square];
+
     if (turn === "x") {
       squares[num] = "x";
       setTurn("o");
@@ -57,9 +72,16 @@ export default function Game() {
       squares[num] = "o";
       setTurn("x");
     }
+
     setSquares(squares);
     CheckWinner(squares);
   };
+
+  const handleRestart = () => {
+    setWinner(null);
+    setSquares(Array(9).fill(""));
+  };
+
   const Square = ({ num }) => {
     return <td onClick={() => handleClick(num)}>{square[num]}</td>;
   };
@@ -89,7 +111,7 @@ export default function Game() {
       {winner && (
         <>
           <p>{winner} is the winner!</p>
-          <button></button>
+          <button onClick={() => handleRestart()}>Restart</button>
         </>
       )}
       {/* <Board />

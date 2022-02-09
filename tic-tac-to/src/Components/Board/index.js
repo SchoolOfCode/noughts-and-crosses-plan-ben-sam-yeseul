@@ -1,25 +1,79 @@
 import React from "react";
 import Square from "../Square";
 
-export default function Board() {
+export default function Board(squareProp, setTurn, turn, setSquares) {
   return (
     <div className="squares">
       <table>
         <tbody>
           <tr>
-            <Square num={0} />
-            <Square num={1} />
-            <Square num={2} />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={0}
+            />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={1}
+            />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={2}
+            />
           </tr>
           <tr>
-            <Square num={3} />
-            <Square num={4} />
-            <Square num={5} />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={3}
+            />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={4}
+            />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={5}
+            />
           </tr>
           <tr>
-            <Square num={6} />
-            <Square num={7} />
-            <Square num={8} />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={6}
+            />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={7}
+            />
+            <Square
+              square={squareProp}
+              setTurn={setTurn}
+              turn={turn}
+              setSquares={setSquares}
+              num={8}
+            />
           </tr>
         </tbody>
       </table>
