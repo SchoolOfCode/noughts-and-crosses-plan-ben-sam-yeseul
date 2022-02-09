@@ -28,7 +28,9 @@ export default function Game() {
 
     for (let combo in combos) {
       combos[combo].forEach((pattern) => {
-        if (
+        if (squares.indexOf("") === -1) {
+          setWinner("No one");
+        } else if (
           squares[pattern[0]] === "" ||
           squares[pattern[1]] === "" ||
           squares[pattern[2]] === ""
